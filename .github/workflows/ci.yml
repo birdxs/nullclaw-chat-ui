@@ -27,8 +27,8 @@ jobs:
       - name: Run type and Svelte checks
         run: npm run check
 
-      - name: Build
-        run: npm run build
+      - name: Build release bundles
+        run: npm run build:release
 
       - name: Package release artifacts (smoke)
         run: bash ./scripts/package-release.sh "v0.0.0-ci" release

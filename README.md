@@ -57,6 +57,8 @@ Open `http://localhost:5173`.
 
 - `npm run dev` - local development server.
 - `npm run build` - production build.
+- `npm run build:module` - embeddable module build.
+- `npm run build:release` - static app and embeddable module builds for release archives.
 - `npm run preview` - preview built app.
 - `npm run cli -- run` - serve built UI via local CLI entrypoint.
 - `npm run test` - run Vitest suite.
@@ -66,7 +68,7 @@ Open `http://localhost:5173`.
 
 ## Global CLI Usage
 
-GitHub release artifacts include a runnable CLI bundle with `build/` assets and launchers.
+GitHub release artifacts include a runnable CLI bundle with `build/` assets, launchers, and the embeddable `module.js`.
 After extracting a release archive, put the launcher on your `$PATH`:
 
 ```bash
