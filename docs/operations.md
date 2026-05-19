@@ -6,10 +6,10 @@
 npm ci
 npm run test
 npm run check
-npm run build
+npm run build:release
 ```
 
-Output is generated into `build/` (static app bundle).
+Output is generated into `build/` (static app bundle) and `dist/module.js` (embeddable module).
 
 ## Deployment Model
 
@@ -48,7 +48,7 @@ Security expectations:
 1. Ensure docs match current runtime behavior.
 2. Run `npm run test` and `npm run check`.
 3. Manual verification of pairing, chat, approvals, logout.
-4. Build production bundle.
+4. Build release bundles: `npm run build:release`.
 5. Verify CLI startup: `npm run cli -- run --host 127.0.0.1 --port 4173`.
 6. Validate release archive layout: `bash ./scripts/package-release.sh vX.Y.Z release && bash ./scripts/verify-release-package.sh vX.Y.Z release`.
 7. Tag a release: `git tag vYYYY.M.D && git push origin vYYYY.M.D`.
@@ -67,6 +67,8 @@ Each archive contains:
 - `nullclaw-chat-ui` (Unix launcher)
 - `nullclaw-chat-ui.cmd` (Windows launcher)
 - `bin/nullclaw-chat-ui.js`
+- `module.js` (embeddable module)
+- `nullclaw-chat-ui.css` (embeddable module styles)
 - `build/` (static app bundle)
 
 ## Troubleshooting

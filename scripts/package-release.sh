@@ -11,6 +11,12 @@ rm -rf "${OUTDIR}"
 mkdir -p "${PKG_DIR}/bin"
 
 cp -R build "${PKG_DIR}/build"
+if [[ ! -f dist/module.js ]]; then
+  echo "Module build output was not found: dist/module.js" >&2
+  echo "Run \`npm run build:module\` before packaging release archives." >&2
+  exit 1
+fi
+cp -R dist/. "${PKG_DIR}/"
 cp bin/nullclaw-chat-ui.js "${PKG_DIR}/bin/nullclaw-chat-ui.js"
 cp package.json "${PKG_DIR}/package.json"
 cp README.md "${PKG_DIR}/README.md"

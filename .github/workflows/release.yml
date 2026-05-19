@@ -27,8 +27,8 @@ jobs:
           npm run test
           npm run check
 
-      - name: Build production bundle
-        run: npm run build
+      - name: Build release bundles
+        run: npm run build:release
 
       - name: Package release archives
         run: bash ./scripts/package-release.sh "${GITHUB_REF_NAME}" release
